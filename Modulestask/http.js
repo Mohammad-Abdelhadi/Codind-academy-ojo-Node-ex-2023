@@ -92,3 +92,76 @@ const hash = crypto.createHash('md5', secret)
 console.log(hash);
 
 const hashs=crypto.createHash('md5').update('sajodijsao').digest('hex')
+
+// 11
+
+const { exec } = require('child_process');
+
+const command = 'dir';
+
+exec(command, (error, stdout, stderr) => {
+  console.log('Output:\n' + stdout);
+});
+
+
+// 12
+var cluster = require('cluster');
+
+if (cluster.isWorker) {
+  console.log('multiple processes running');
+} else {
+  console.log('I am a master');
+  cluster.fork();
+  cluster.fork(); 
+}
+
+// 14
+const dns = require("dns");
+dns.lookup('www.google.com', function (err, addresses, family) {
+  console.log(addresses);
+});
+
+// num 15
+
+const net = require('net');
+
+const server = net.createServer((socket) => {
+
+  console.log('Client connected.');
+
+  socket.on('data', (data) => {
+    console.log(Received data from client: ${data});
+
+    socket.write('Server response: Data received.');
+  });
+
+  socket.on('end', () => {
+    console.log('Client disconnected.');
+  });
+});
+
+const port = 5050
+server.listen(port, () => {
+  console.log(TCP server started on port ${port});
+});
+
+ //num 16
+ 
+   const client = net.createConnection({ port: 5051 }, () => {
+     console.log('Connected to TCP server.');
+
+//      Send data to the server
+     client.write('Hello, server!');
+   });
+
+   client.on('data', (data) => {
+     console.log(Received data from server: ${data});
+   });
+
+   client.on('end', () => {
+     console.log('Disconnected from TCP server.');
+   });
+
+   client.on('error', (err) => {
+     console.error(Error with TCP client: ${err});
+   });
