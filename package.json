@@ -1,0 +1,17 @@
+{
+  "name": "codind-academy-ojo-node-ex-2023",
+  "version": "1.0.0",
+  "description": "EDITED",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
