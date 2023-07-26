@@ -1,0 +1,20 @@
+{
+    "books": [
+      {
+        "id": 1,
+        "title": "Black Swan",
+        "author": "Nasim Taleb",
+        "description": "about black swan",
+        "price": 10,
+        "cover": "soft cover"
+      },
+      {
+        "id": 2,
+        "title": "Rich Dad Poor Dad",
+        "author": "Robert Kiyosaki",
+        "description": "about black rich dad poor dad",
+        "price": 12,
+        "cover": "soft blade cover"
+      }
+    ]
+  }
